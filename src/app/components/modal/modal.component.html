@@ -1,0 +1,98 @@
+<section class="container d-flex justify-content-end py-4">
+  <button
+    type="button"
+    class="btn btn-success"
+    data-bs-toggle="modal"
+    data-bs-target="#modalCreateStore"
+  >
+    Add Store <i class="bi bi-plus-circle"></i>
+  </button>
+</section>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalCreateStore"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">title</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="row" [formGroup]="form" (submit)="sendData()">
+          <div class="mb-3 col-12 col-md-6">
+            <label for="store-id" class="form-label">Store ID</label>
+            <input
+              type="number"
+              class="form-control"
+              id="store-id"
+              required
+              formControlName="id"
+            />
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="store-name" class="form-label">Name</label>
+            <input
+              type="name"
+              class="form-control"
+              id="store-name"
+              required
+              formControlName="name"
+            />
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="store-name" class="form-label">ADDRESS</label>
+            <input
+              type="name"
+              class="form-control"
+              id="store-name"
+              required
+              formControlName="address"
+            />
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="store-id" class="form-label">CITY</label>
+            <input
+              type="text"
+              class="form-control"
+              id="store-id"
+              required
+              formControlName="city"
+            />
+          </div>
+          <div class="mb-3 col-12 col-md-6">
+            <label for="store-name" class="form-label">OPENING HOURS</label>
+            <input
+              type="time"
+              class="form-control"
+              id="store-name"
+              required
+              formControlName="openingHours"
+            />
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Save</button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal"
+              (click)="closeModal()"
+            >
+              Close
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
