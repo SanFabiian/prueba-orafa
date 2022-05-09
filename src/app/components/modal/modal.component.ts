@@ -44,6 +44,7 @@ export class ModalComponent implements OnInit {
       openingHours: this.form.value.openingHours
     })
     .subscribe(res => {
+      this.formModal.hide()
       console.log('send...?')
     })
   }
